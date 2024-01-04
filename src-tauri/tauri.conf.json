@@ -25,7 +25,8 @@
         "maximize": true,
         "minimize": true,
         "unmaximize": true,
-        "unminimize": true
+        "unminimize": true,
+        "startDragging": true
       },
       "fs": {
         "all": true
@@ -84,7 +85,7 @@
         "fullscreen": false,
         "focus": true,
         "resizable": true,
-        "decorations": true,
+        "decorations": false,
         "center": true
       }
     ]
