@@ -14,9 +14,12 @@
 
 	<div style="height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;">
 
-		<h1 style="font-size: 50px;">Hello World!</h1>
+		<div id="response"></div>
 
-		<p>Edit <code style="font-family: 'Courier New', Courier, monospace;">index.html</code> to see changes</p>
+		<form id="chat-form">
+			<input type="text" id="message-input" placeholder="Type your message here..." required>
+			<button type="submit">Send</button>
+		</form>
 
 	</div>
 
