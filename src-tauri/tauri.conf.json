@@ -54,7 +54,9 @@
         "digestAlgorithm": "sha256",
         "timestampUrl": "",
         "wix": {
-          "language": "en-US"
+          "language": "en-US",
+          "bannerPath": "../src/assets/banner.png",
+          "dialogImagePath": "../src/assets/dialogImage.png"
         }
       }
     },
@@ -62,7 +64,7 @@
       "csp": null
     },
     "updater": {
-      "active": true,
+      "active": false,
       "dialog": true,
       "endpoints": [
         

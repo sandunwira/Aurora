@@ -1,7 +1,18 @@
+:root {
+	--light: "HND-Light", sans-serif;
+	--lightItalic: "HND-LightItalic", sans-serif;
+	--regular: "HND-Regular", sans-serif;
+	--regularItalic: "HND-RegularItalic", sans-serif;
+	--medium: "HND-Medium", sans-serif;
+	--mediumItalic: "HND-MediumItalic", sans-serif;
+	--bold: "HND-Bold", sans-serif;
+	--boldItalic: "HND-BoldItalic", sans-serif;
+}
+
 * {
 	margin: 0;
 	padding: 0;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: var(--regular);
 }
 
 html {

@@ -1,4 +1,11 @@
-// const { appWindow } = window.__TAURI__.window;
+const { appWindow } = window.__TAURI__.window;
+
+document.getElementById('titlebar-minimize').addEventListener('click', function (event) {
+	appWindow.minimize();
+});
+document.getElementById('titlebar-close').addEventListener('click', function (event) {
+	appWindow.close();
+});
 
 document.getElementById('chat-form').addEventListener('submit', function (event) {
 	event.preventDefault();
