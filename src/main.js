@@ -1,15 +1,17 @@
 const { appWindow } = window.__TAURI__.window;
 
-document.getElementById('titlebar-minimize').addEventListener('click', function (event) {
-	appWindow.minimize();
-});
-document.getElementById('titlebar-close').addEventListener('click', function (event) {
-	appWindow.close();
-});
+document.getElementById('titlebar-minimize').addEventListener('click', () => appWindow.minimize());
+document.getElementById('titlebar-maximize').addEventListener('click', () => appWindow.toggleMaximize());
+document.getElementById('titlebar-close').addEventListener('click', () => appWindow.close());
 
-document.getElementById('chat-form').addEventListener('submit', function (event) {
+const chatForm = document.getElementById('chat-form');
+var messageInput = document.getElementById('message-input');
+var responsesDiv = document.querySelector('.responsesDiv');
+var myResponse = document.querySelector('.myResponse');
+var botResponse = document.querySelector('.botResponse');
+
+chatForm.addEventListener('submit', function (event) {
 	event.preventDefault();
-	var messageInput = document.getElementById('message-input');
 	fetch('http://192.168.1.142:5005/webhooks/rest/webhook', {
 		method: 'POST',
 		headers: {
@@ -22,8 +24,7 @@ document.getElementById('chat-form').addEventListener('submit', function (event)
 	})
 		.then(response => response.json())
 		.then(data => {
-			var responseDiv = document.getElementById('response');
-			responseDiv.innerText = data[0].text;
+			botResponse.innerText = data[0].text;
 			messageInput.value = '';
 		})
 		.catch((error) => {

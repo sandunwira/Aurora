@@ -11,24 +11,42 @@
 	<link rel="stylesheet" href="fonts.css">
 
 	<script src="script.js" defer></script>
+
+	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-Light.otf" as="font" type="font/otf" crossorigin>
+	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-LightIta.otf" as="font" type="font/otf" crossorigin>
+	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-Regular.otf" as="font" type="font/otf" crossorigin>
+	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-RegIta.otf" as="font" type="font/otf" crossorigin>
+	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-Medium.otf" as="font" type="font/otf" crossorigin>
+	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-MedIta.otf" as="font" type="font/otf" crossorigin>
+	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-Bold.otf" as="font" type="font/otf" crossorigin>
+	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-BoldIta.otf" as="font" type="font/otf" crossorigin>
+	<link rel="preload" href="assets/images/ui/close.svg" as="image" type="image/svg+xml" crossorigin>
+	<link rel="preload" href="assets/images/ui/minimize.svg" as="image" type="image/svg+xml" crossorigin>
+	<link rel="preload" href="assets/images/ui/send.svg" as="image" type="image/svg+xml" crossorigin>
+	<link rel="preload" href="assets/images/logo-text.svg" as="image" type="image/svg+xml" crossorigin>
+	<link rel="preload" href="assets/images/logo.svg" as="image" type="image/svg+xml" crossorigin>
 </head>
 
 <body>
 
-	<div style="height: 100vh; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+	<div style="height: 100vh; width: 100%; position: fixed; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
 
 		<div id="titlebar" style="width: 100%; height: 25px; display: flex; align-items: center; justify-content: center;">
-			<div data-tauri-drag-region class="titlebarContainer" style="width: calc(100% - 12px); height: 100%; display: flex; align-items: center; justify-content: space-between;">
-				<div style="height: 50%;">
-					<img style="height: 100%;" src="assets/images/logo-text.svg">
+			<div data-tauri-drag-region class="titlebarContainer" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: space-between;">
+				<div style="height: 100%; display: flex; align-items: center; justify-content: center; padding-left: 10px;">
+					<img style="height: 10px;" src="assets/images/logo-text.svg">
 				</div>
 
-				<div style="height: 100%; display: flex; flex-direction: row; align-items: center; gap: 8px;">
-					<div style="height: 15px; width: 15px; background: #ececec; display: flex; align-items: center; justify-content: center; border-radius: 5px; cursor: pointer;" id="titlebar-minimize">
+				<div style="height: 100%; display: flex; flex-direction: row; align-items: center;">
+					<div style="height: 100%; width: 30px; background: #9E103B; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="titlebar-minimize">
 						<img style="height: 8px;" src="assets/images/ui/minimize.svg">
 					</div>
 
-					<div style="height: 15px; width: 15px; background: #ececec; display: flex; align-items: center; justify-content: center; border-radius: 5px; cursor: pointer;" id="titlebar-close">
+					<div style="height: 100%; width: 30px; background: #9E103B; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="titlebar-maximize">
+						<img style="height: 8px;" src="assets/images/ui/maximize.svg">
+					</div>
+
+					<div style="height: 100%; width: 30px; background: #9E103B; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="titlebar-close">
 						<img style="height: 8px;" src="assets/images/ui/close.svg">
 					</div>
 				</div>
@@ -36,26 +54,38 @@
 		</div>
 
 
-		<div style="height: calc(100% - 75px); width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-			<div id="startMsg" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px;">
-				<div style="height: 60px; display: flex; align-items: center; justify-content: center;">
-					<img style="height: 100%;" src="assets/images/logo-text.svg">
+		<div style="height: calc(100% - 115px); width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+			<div style="height: 100%; width: 100%; overflow: auto;">
+				<div style="height: 2000px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #B0B0B0;">
+
+					<div id="startMsg" style="height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px;">
+						<div style="height: 60px; display: flex; align-items: center; justify-content: center;">
+							<img style="height: 100%;" src="assets/images/logo-text.svg">
+						</div>
+
+						<h1 style="font-family: var(--light); font-size: 16px; color: #ececec;">Aurora is a simple chatbot designed specially for you.</h1>
+					</div>
+
+					<div id="responsesDiv" style="height: 100%; width: 100%; display: flex; align-items: start; justify-content: center;">
+						<div class="myResponse"></div>
+						<div class="botResponse"></div>
+					</div>
+					
+
 				</div>
-
-				<h1 style="font-family: var(--light); font-size: 16px; color: #ececec;">Aurora is a simple chatbot that can help you with your daily tasks.</h1>
 			</div>
-
-			<div id="response"></div>
 		</div>
 
 
-		<form id="chat-form" style="height: 60px; width: 100%; display: flex; align-items: center; justify-content: center;">
-			<div style="display: flex; flex-direction: row; width: 60%; height: 70%;">
-				<input style="width: calc(100% - 32px); padding: 8px 12px; border: none; border-radius: 8px 0 0 8px; outline: none;" type="text" id="message-input" placeholder="Message Aurora..." required>
-				<button style="height: 100%; background: #C1184A; display: flex; align-items: center; justify-content: center; padding: 8px 14px; border: none; border-radius: 0 8px 8px 0; outline: none; cursor: pointer;" type="submit">
+		<form id="chat-form" style="height: 100px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+			<div style="width: 60%; height: 40%; display: flex; flex-direction: row; gap: 10px;">
+				<input style="width: calc(100% - 32px); color: #B0B0B0; background: #424242; padding: 8px 12px; border: none; border-radius: 8px; outline: none;" type="text" id="message-input" placeholder="Message Aurora..." autocomplete="off" required>
+				<button style="height: 100%; background: #424242; display: flex; align-items: center; justify-content: center; padding: 8px 14px; border: none; border-radius: 8px; outline: none; cursor: pointer;" type="submit">
 					<img style="height: 60%;" src="assets/images/ui/send.svg">
 				</button>
 			</div>
+
+			<p style="color: #B0B0B0; font-size: 12px; font-family: var(--light);">Note: This is a demo, so please don't use any personal information.</p>
 		</form>
 
 	</div>
