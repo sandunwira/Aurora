@@ -7,7 +7,6 @@ document.getElementById('titlebar-close').addEventListener('click', () => appWin
 const chatForm = document.getElementById('chat-form');
 var messageInput = document.getElementById('message-input');
 let responsesDiv = document.getElementById('responsesDiv');
-var myResponse = document.querySelector('.myResponse');
 var botResponse = document.querySelector('.botResponse');
 
 chatForm.addEventListener('submit', function (event) {
@@ -15,8 +14,14 @@ chatForm.addEventListener('submit', function (event) {
 
 	// Create a new div for your message
 	let myResponseDiv = document.createElement('div');
-	myResponseDiv.className = 'myResponse';
-	myResponseDiv.innerText = messageInput.value;
+	myResponseDiv.classList = 'myResponseCard flex flexRow';
+	myResponseDiv.style = 'width: 100%; align-items: center;';
+	myResponseDiv.innerHTML = `
+		<div class="flex" style="width: 70px; height: 100%; align-items: center; justify-content: center;">A</div>
+		<div style="height: auto; width: calc(100% - 70px); padding: 20px 30px; background: #292929;">
+			${messageInput.value}
+		</div>
+	`;
 
 	// Append your message to the responsesDiv
 	responsesDiv.appendChild(myResponseDiv);
@@ -35,8 +40,14 @@ chatForm.addEventListener('submit', function (event) {
 		.then(data => {
 			// Create a new div for the bot's response
 			let botResponseDiv = document.createElement('div');
-			botResponseDiv.className = 'botResponse';
-			botResponseDiv.innerText = data[0].text;
+			botResponseDiv.classList = 'botResponseCard flex flexRow';
+			botResponseDiv.style = 'width: 100%; align-items: center;';
+			botResponseDiv.innerHTML = `
+				<div class="flex" style="width: 70px; height: 100%; align-items: center; justify-content: center;">A</div>
+				<div style="height: auto; width: calc(100% - 70px); padding: 20px 30px; background: #292929;">
+					${data[0].text}
+				</div>
+			`;
 
 			// Append the bot's response to the responsesDiv
 			responsesDiv.appendChild(botResponseDiv);

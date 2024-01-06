@@ -21,3 +21,62 @@ html {
 	color: #ECECEC;
 	background: #242424;
 }
+
+
+.flex {
+	display: flex;
+}
+.flexCol{
+	flex-direction: column;
+}
+.flexRow{
+	flex-direction: row;
+}
+
+
+#titlebar-close {
+	background: transparent;
+	opacity: 0.7;
+	transition: 0.2s;
+}
+#titlebar-close:hover {
+	background: #E7260888;
+	opacity: 1;
+	cursor: pointer;
+	transition: 0.2s;
+}
+#titlebar-maximize {
+	background: transparent;
+	opacity: 0.7;
+	transition: 0.2s;
+}
+#titlebar-maximize:hover {
+	background: #CACACA88;
+	opacity: 1;
+	cursor: pointer;
+	transition: 0.2s;
+}
+#titlebar-minimize {
+	background: transparent;
+	opacity: 0.7;
+	transition: 0.2s;
+}
+#titlebar-minimize:hover {
+	background: #CACACA88;
+	opacity: 1;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+#statusIndicator {
+	height: auto;
+	color: #ECECEC;
+	font-size: 12px;
+	opacity: 0.7;
+	gap: 5px;
+	transition: 0.2s;
+}
+#statusIndicator:hover {
+	opacity: 1;
+	transition: 0.2s;
+}
