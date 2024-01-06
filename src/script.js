@@ -1,11 +1,11 @@
-const startMsg = document.getElementById('startMsg');
 const responsesDiv = document.getElementById('responsesDiv');
-const botResponse = document.querySelector('.botResponse');
-const myResponse = document.querySelector('.myResponse');
 
-// when response element has text, hide startMsg
-botResponse.addEventListener('DOMSubtreeModified', () => {
-	if (botResponse.innerText !== '') {
-		startMsg.style.display = 'none';
-	}
-});
+// save innerHTML of responsesDiv to localStorage every 1 second
+setInterval(function () {
+	localStorage.setItem('responsesDiv', responsesDiv.innerHTML);
+}, 1000);
+
+// load innerHTML of responsesDiv from localStorage on page load
+window.onload = function () {
+	responsesDiv.innerHTML = localStorage.getItem('responsesDiv');
+};

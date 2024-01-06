@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="fonts.css">
 
 	<script src="script.js" defer></script>
+	<script src="status.js" defer></script>
 
 	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-Light.otf" as="font" type="font/otf" crossorigin>
 	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-LightIta.otf" as="font" type="font/otf" crossorigin>
@@ -20,33 +21,36 @@
 	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-MedIta.otf" as="font" type="font/otf" crossorigin>
 	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-Bold.otf" as="font" type="font/otf" crossorigin>
 	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-BoldIta.otf" as="font" type="font/otf" crossorigin>
-	<link rel="preload" href="assets/images/ui/close.svg" as="image" type="image/svg+xml" crossorigin>
-	<link rel="preload" href="assets/images/ui/minimize.svg" as="image" type="image/svg+xml" crossorigin>
-	<link rel="preload" href="assets/images/ui/send.svg" as="image" type="image/svg+xml" crossorigin>
-	<link rel="preload" href="assets/images/logo-text.svg" as="image" type="image/svg+xml" crossorigin>
-	<link rel="preload" href="assets/images/logo.svg" as="image" type="image/svg+xml" crossorigin>
+	<link rel="preload" href="assets/images/ui/close.svg" as="image" type="image/svg+xml">
+	<link rel="preload" href="assets/images/ui/minimize.svg" as="image" type="image/svg+xml">
+	<link rel="preload" href="assets/images/ui/send.svg" as="image" type="image/svg+xml">
+	<link rel="preload" href="assets/images/logo-text.svg" as="image" type="image/svg+xml">
+	<link rel="preload" href="style.css" as="style" type="text/css">
+	<link rel="preload" href="fonts.css" as="style" type="text/css">
+	<link rel="preload" href="script.js" as="script" type="text/javascript">
+	<link rel="preload" href="status.js" as="script" type="text/javascript">
 </head>
 
 <body>
 
 	<div style="height: 100vh; width: 100%; position: fixed; top: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
 
-		<div id="titlebar" style="width: 100%; height: 25px; display: flex; align-items: center; justify-content: center;">
+		<div id="titlebar" style="width: 100%; height: 40px; display: flex; align-items: center; justify-content: center;">
 			<div data-tauri-drag-region class="titlebarContainer" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: space-between;">
 				<div style="height: 100%; display: flex; align-items: center; justify-content: center; padding-left: 10px;">
 					<img style="height: 10px;" src="assets/images/logo-text.svg">
 				</div>
 
 				<div style="height: 100%; display: flex; flex-direction: row; align-items: center;">
-					<div style="height: 100%; width: 30px; background: #9E103B; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="titlebar-minimize">
+					<div style="height: 100%; width: 40px; background: #9E103B; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="titlebar-minimize">
 						<img style="height: 8px;" src="assets/images/ui/minimize.svg">
 					</div>
 
-					<div style="height: 100%; width: 30px; background: #9E103B; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="titlebar-maximize">
+					<div style="height: 100%; width: 40px; background: #9E103B; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="titlebar-maximize">
 						<img style="height: 8px;" src="assets/images/ui/maximize.svg">
 					</div>
 
-					<div style="height: 100%; width: 30px; background: #9E103B; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="titlebar-close">
+					<div style="height: 100%; width: 40px; background: #9E103B; display: flex; align-items: center; justify-content: center; cursor: pointer;" id="titlebar-close">
 						<img style="height: 8px;" src="assets/images/ui/close.svg">
 					</div>
 				</div>
@@ -54,23 +58,11 @@
 		</div>
 
 
-		<div style="height: calc(100% - 115px); width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+		<div style="height: calc(100% - 130px); width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
 			<div style="height: 100%; width: 100%; overflow: auto;">
-				<div style="height: 2000px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: #B0B0B0;">
+				<div style="height: auto; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: start; background: #B0B0B0;">
 
-					<div id="startMsg" style="height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px;">
-						<div style="height: 60px; display: flex; align-items: center; justify-content: center;">
-							<img style="height: 100%;" src="assets/images/logo-text.svg">
-						</div>
-
-						<h1 style="font-family: var(--light); font-size: 16px; color: #ececec;">Aurora is a simple chatbot designed specially for you.</h1>
-					</div>
-
-					<div id="responsesDiv" style="height: 100%; width: 100%; display: flex; align-items: start; justify-content: center;">
-						<div class="myResponse"></div>
-						<div class="botResponse"></div>
-					</div>
-					
+					<div id="responsesDiv" style="height: auto; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;"></div>
 
 				</div>
 			</div>
