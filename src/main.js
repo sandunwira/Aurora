@@ -9,7 +9,6 @@ const startMsg = document.getElementById('startMsg');
 const images = document.getElementsByTagName('img');
 
 
-
 document.getElementById('titlebar-minimize').addEventListener('click', () => appWindow.minimize());
 document.getElementById('titlebar-maximize').addEventListener('click', () => appWindow.toggleMaximize());
 document.getElementById('titlebar-close').addEventListener('click', () => appWindow.close());

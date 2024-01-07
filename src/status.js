@@ -10,6 +10,7 @@ async function checkStatus() {
 			return 'Online';
 		}
 	} catch (error) {
+		console.clear();
 		return 'Offline';
 	}
 }
@@ -33,6 +34,7 @@ setInterval(() => {
 	checkStatus()
 		.then(status => serverStatus.innerHTML = status);
 }, 2000);
+
 
 window.onload = () => {
 	changeStatus();
