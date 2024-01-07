@@ -46,19 +46,19 @@
 				<div style="height: 100%; display: flex; flex-direction: row; align-items: center; gap: 20px;">
 					<div id="statusIndicator" class="flex flexRow" style="align-items: center;">
 						<img id="statusImg" style="height: 8px;" src="assets/images/ui/status.svg">
-						<span id="serverStatus"></span>
+						<span id="serverStatus">Checking...</span>
 					</div>
 
 					<div class="flex flexRow" style="height: 100%;">
-						<div id="titlebar-minimize" class="flex" style="height: 100%; width: 40px; align-items: center; justify-content: center;">
+						<div id="titlebar-minimize" title="Minimize" class="flex" style="height: 100%; width: 40px; align-items: center; justify-content: center;">
 							<img style="width: 8px;" src="assets/images/ui/minimize.svg">
 						</div>
 
-						<div id="titlebar-maximize" class="flex" style="height: 100%; width: 40px; align-items: center; justify-content: center;">
+						<div id="titlebar-maximize" title="Maximize" class="flex" style="height: 100%; width: 40px; align-items: center; justify-content: center;">
 							<img style="width: 8px;" src="assets/images/ui/maximize.svg">
 						</div>
 
-						<div id="titlebar-close" class="flex" style="height: 100%; width: 40px; align-items: center; justify-content: center;">
+						<div id="titlebar-close" title="Close" class="flex" style="height: 100%; width: 40px; align-items: center; justify-content: center;">
 							<img style="width: 8px;" src="assets/images/ui/close.svg">
 						</div>
 					</div>
@@ -68,10 +68,15 @@
 
 
 		<div class="flex flexCol" style="height: calc(100% - 130px); width: 100%; align-items: center; justify-content: center;">
-			<div style="height: 100%; width: 100%; overflow: auto;">
-				<div class="flex flexCol" style="height: auto; width: 100%; align-items: center; justify-content: start;">
+			<div id="startMsg" class="flex flexCol" style="height: calc(100% - 130px); width: 100%; background: #242424; align-items: center; justify-content: center; gap: 30px; position: absolute; z-index: 5;">
+				<img style="height: 60px;" src="assets/images/logo-text.svg">
+				<p style="color: #B0B0B0; font-size: 14px; font-family: var(--light);">Aurora is a demo chatbot built with <a href="https://tauri.app" target="_blank" style="color: #B0B0B0;">Tauri</a> and <a href="https://rasa.com" target="_blank" style="color: #B0B0B0;">Rasa</a>.</p>
+			</div>
 
-					<div id="responsesDiv" class="flex flexCol" style="height: auto; width: calc(100% - 20px); padding: 10px; align-items: center; justify-content: center; gap: 5px;"></div>
+			<div id="scrollContainer" class="flex" style="height: 90%; width: 100%; overflow: auto; justify-content: center;">
+				<div class="flex flexCol" style="height: auto; width: 90%; align-items: center; justify-content: start;">
+
+					<div id="responsesDiv" class="flex flexCol" style="height: auto; width: calc(100% - 20px); padding: 10px; align-items: center; justify-content: center; gap: 15px;"></div>
 
 				</div>
 			</div>
@@ -87,7 +92,7 @@
 				</button>
 			</div>
 
-			<p style="color: #B0B0B0; font-size: 12px; font-family: var(--light);">Note: This is a demo, so please don't use any personal information.</p>
+			<p style="color: #B0B0B0; font-size: 12px; font-family: var(--light);">Note: This is a demo, so please don't use any personal information. See more on <a href="https://github.com/sandunwira/Aurora" target="_blank" style="color: #B0B0B0;">GitHub</a>.</p>
 		</form>
 
 	</div>

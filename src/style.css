@@ -15,11 +15,41 @@
 	font-family: var(--regular);
 }
 
+
+*::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+*::-webkit-scrollbar-track {
+	background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+	background-color: #9a143c;
+}
+*::-webkit-scrollbar-thumb:hover {
+	background-color: #8c1237;
+}
+*::-webkit-scrollbar-thumb:active {
+	background-color: #7d1131;
+}
+
+
 html {
 	scroll-behavior: smooth;
 	user-select: none;
 	color: #ECECEC;
 	background: #242424;
+}
+
+a {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	opacity: 0.7;
+	transition: 0.2s;
+}
+a:hover {
+	opacity: 1;
+	transition: 0.2s;
 }
 
 
@@ -79,4 +109,15 @@ html {
 #statusIndicator:hover {
 	opacity: 1;
 	transition: 0.2s;
+}
+
+
+.botResponseText {
+	user-select: text;
+	background: #392F32;
+}
+
+.myResponseText {
+	user-select: text;
+	background: #313131;
 }
