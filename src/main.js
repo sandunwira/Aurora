@@ -6,11 +6,20 @@ let responsesDiv = document.getElementById('responsesDiv');
 var botResponse = document.querySelector('.botResponse');
 const scrollContainer = document.getElementById('scrollContainer');
 const startMsg = document.getElementById('startMsg');
+const images = document.getElementsByTagName('img');
+
 
 
 document.getElementById('titlebar-minimize').addEventListener('click', () => appWindow.minimize());
 document.getElementById('titlebar-maximize').addEventListener('click', () => appWindow.toggleMaximize());
 document.getElementById('titlebar-close').addEventListener('click', () => appWindow.close());
+
+
+for (let i = 0; i < images.length; i++) {
+	images[i].addEventListener('mousedown', function (e) {
+		e.preventDefault();
+	});
+}
 
 
 chatForm.addEventListener('submit', function (event) {
@@ -21,7 +30,7 @@ chatForm.addEventListener('submit', function (event) {
 	myResponseDiv.style = 'width: 100%; align-items: center;';
 	myResponseDiv.innerHTML = `
 		<div class="flex" style="width: 70px; height: 100%; align-items: center; justify-content: center;">A</div>
-		<div class="myResponseText" style="height: auto; width: calc(100% - 70px); color: #CCCCCC; font-family: var(--light); font-size: 14px; padding: 30px 30px;">
+		<div class="myResponseText" style="height: auto; width: calc(100% - 70px); color: #CCCCCC; line-height: 1.5; font-family: var(--light); font-size: 14px; text-align: justify; text-align-last: left; word-break: break-word; padding: 30px 30px;">
 			${messageInput.value}
 		</div>
 	`;
@@ -47,7 +56,7 @@ chatForm.addEventListener('submit', function (event) {
 			botResponseDiv.style = 'width: 100%; align-items: center;';
 			botResponseDiv.innerHTML = `
 				<div class="flex" style="width: 70px; height: 100%; align-items: center; justify-content: center;">A</div>
-				<div class="botResponseText" style="height: auto; width: calc(100% - 70px); color: #CCCCCC; font-family: var(--light); font-size: 14px; padding: 30px 30px;">
+				<div class="botResponseText" style="height: auto; width: calc(100% - 70px); color: #CCCCCC; line-height: 1.5; font-family: var(--light); font-size: 14px; text-align: justify; text-align-last: left; word-break: break-word; padding: 30px 30px;">
 					${data[0].text}
 				</div>
 			`;
