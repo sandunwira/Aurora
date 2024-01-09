@@ -111,6 +111,15 @@ a:hover {
 	transition: 0.2s;
 }
 
+#networkIndicator {
+	opacity: 0.7;
+	transition: 0.2s;
+}
+#networkIndicator:hover {
+	opacity: 1;
+	transition: 0.2s;
+}
+
 
 .botResponseText {
 	user-select: text;
