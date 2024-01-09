@@ -65,8 +65,13 @@ chatForm.addEventListener('submit', function (event) {
 
 			scrollContainer.scrollTop = scrollContainer.scrollHeight;
 		})
-		.catch((error) => {
-			console.error('Error:', error);
+		.catch(() => {
+			new Notification("An error occurred while submitting the response", {
+				body: "Make sure you have an active network connection.",
+				sound: 'Default'
+			});
+
+			scrollContainer.scrollTop = scrollContainer.scrollHeight;
 		});
 });
 

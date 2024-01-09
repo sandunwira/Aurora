@@ -16,7 +16,7 @@ async function botStatus() {
 	}
 }
 
-function updateStatus() {
+function updateBotStatus() {
 	botStatus()
 		.then(status => {
 			if (status === 'Online') {
@@ -41,6 +41,7 @@ async function networkStatus() {
 			return 'Online';
 		})
 		.catch(() => {
+			console.clear();
 			return 'Offline';
 		});
 }
@@ -61,7 +62,7 @@ function updateNetworkStatus() {
 
 
 setInterval(() => {
-	updateStatus();
+	updateBotStatus();
 	botStatus();
 	networkStatus();
 	updateNetworkStatus();
@@ -69,7 +70,7 @@ setInterval(() => {
 
 
 window.onload = () => {
-	updateStatus();
+	updateBotStatus();
 	botStatus();
 	networkStatus();
 	updateNetworkStatus();
