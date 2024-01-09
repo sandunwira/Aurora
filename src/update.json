@@ -1,0 +1,11 @@
+{
+	"version": "1.0.0",
+	"notes": "- Initial Release of Aurora",
+	"pub_date": "",
+	"platforms": {
+		"windows-x86_64": {
+			"signature": "",
+			"url": "https://github.com/sandunwira/Aurora/releases/download/1.0.0/Aurora_1.0.0_x64_en-US.msi.zip"
+		}
+	}
+}

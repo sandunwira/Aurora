@@ -78,3 +78,13 @@ function startMsgStatus() {
 		startMsg.style.display = 'none';
 	}
 }
+
+
+setInterval(() => {
+	startMsgStatus();
+}, 2000);
+
+
+window.onload = () => {
+	startMsgStatus();
+};
