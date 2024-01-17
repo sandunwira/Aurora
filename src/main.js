@@ -28,7 +28,7 @@ chatForm.addEventListener('submit', function (event) {
 	myResponseDiv.classList = 'myResponseCard flex flexRow';
 	myResponseDiv.style = 'width: 100%; align-items: center;';
 	myResponseDiv.innerHTML = `
-		<div class="flex" style="width: 70px; height: 100%; align-items: center; justify-content: center;">A</div>
+		<div class="flex" style="width: 70px; height: 100%; align-items: center; justify-content: start;"><img style="width: 25px; height: auto; border-radius: 4px;" src="assets/images/ui/userIcon.png"></div>
 		<div class="myResponseText" style="height: auto; width: calc(100% - 70px); color: #CCCCCC; line-height: 1.5; font-family: var(--light); font-size: 14px; text-align: justify; text-align-last: left; word-break: break-word; padding: 30px 30px;">
 			${messageInput.value}
 		</div>
@@ -54,7 +54,7 @@ chatForm.addEventListener('submit', function (event) {
 			botResponseDiv.classList = 'botResponseCard flex flexRow';
 			botResponseDiv.style = 'width: 100%; align-items: center;';
 			botResponseDiv.innerHTML = `
-				<div class="flex" style="width: 70px; height: 100%; align-items: center; justify-content: center;">A</div>
+				<div class="flex" style="width: 70px; height: 100%; align-items: center; justify-content: start;"><img style="width: 25px; height: auto; border-radius: 4px;" src="assets/images/ui/botIcon.png"></div>
 				<div class="botResponseText" style="height: auto; width: calc(100% - 70px); color: #CCCCCC; line-height: 1.5; font-family: var(--light); font-size: 14px; text-align: justify; text-align-last: left; word-break: break-word; padding: 30px 30px;">
 					${data[0].text}
 				</div>
