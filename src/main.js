@@ -2,6 +2,7 @@ const { appWindow } = window.__TAURI__.window;
 
 const chatForm = document.getElementById('chat-form');
 var messageInput = document.getElementById('message-input');
+const submitBtn = document.getElementById('submitBtn');
 let responsesDiv = document.getElementById('responsesDiv');
 var botResponse = document.querySelector('.botResponse');
 const scrollContainer = document.getElementById('scrollContainer');
@@ -23,6 +24,10 @@ for (let i = 0; i < images.length; i++) {
 
 chatForm.addEventListener('submit', function (event) {
 	event.preventDefault();
+
+	if (messageInput.value.trim() === '' || messageInput.value.trim() === ' ') {
+		return false;
+	}
 
 	let myResponseDiv = document.createElement('div');
 	myResponseDiv.classList = 'myResponseCard flex flexRow';
@@ -63,6 +68,8 @@ chatForm.addEventListener('submit', function (event) {
 			responsesDiv.appendChild(botResponseDiv);
 			messageInput.value = '';
 
+			changeSubmitBtnColor();
+
 			scrollContainer.scrollTop = scrollContainer.scrollHeight;
 		})
 		.catch(() => {
@@ -83,6 +90,25 @@ function startMsgStatus() {
 		startMsg.style.display = 'none';
 	}
 }
+
+
+function changeSubmitBtnColor() {
+	if (messageInput.value.trim() === '' || messageInput.value.trim() === ' ') {
+		submitBtn.style.opacity = '0.5';
+		submitBtn.style.cursor = 'not-allowed';
+		submitBtn.style.transition = '0.3s';
+	} else {
+		submitBtn.style.opacity = '1';
+		submitBtn.style.cursor = 'pointer';
+		submitBtn.style.transition = '0.3s';
+	}
+}
+
+
+messageInput.addEventListener('input', () => {
+	changeSubmitBtnColor();
+});
+
 
 
 setInterval(() => {
