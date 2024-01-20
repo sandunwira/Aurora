@@ -71,7 +71,7 @@
       "active": true,
       "dialog": true,
       "endpoints": [
-        "https://raw.githubusercontent.com/sandunwira/Aurora/main/src/update.json"
+        "https://raw.githubusercontent.com/sandunwira/TauriUpdater/main/aurora.json"
       ],
       "windows": {
         "installMode": "passive"
