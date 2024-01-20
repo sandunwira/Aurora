@@ -2,6 +2,7 @@ const statusIndicator = document.getElementById('statusIndicator');
 const statusImg = document.getElementById('statusImg');
 const serverStatus = document.getElementById('serverStatus');
 const networkIndicator = document.getElementById('networkIndicator');
+const connectionMsg = document.getElementById('connectionMsg');
 
 
 async function botStatus() {
@@ -60,12 +61,31 @@ function updateNetworkStatus() {
 }
 
 
+async function updateConnectionMsg() {
+	const bot_status = await botStatus();
+	const network_status = await networkStatus();
+
+	if (bot_status === 'Online') {
+		connectionMsg.style.display = 'none';
+		connectionMsg.innerHTML = '';
+	} else if (bot_status === 'Offline' || network_status === 'Offline') {
+		connectionMsg.style.display = 'block';
+		connectionMsg.style.textTransform = 'uppercase'
+		connectionMsg.innerHTML = 'Aurora is Offline';
+	} else if (network_status === 'Online' && bot_status === 'Online') {
+		connectionMsg.style.display = 'none';
+		connectionMsg.innerHTML = '';
+	}
+}
+
+
 
 setInterval(() => {
 	updateBotStatus();
 	botStatus();
 	networkStatus();
 	updateNetworkStatus();
+	updateConnectionMsg();
 }, 2000);
 
 
@@ -74,4 +94,5 @@ window.onload = () => {
 	botStatus();
 	networkStatus();
 	updateNetworkStatus();
+	updateConnectionMsg();
 };
