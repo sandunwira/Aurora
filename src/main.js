@@ -74,7 +74,7 @@ chatForm.addEventListener('submit', function (event) {
 		})
 		.catch(() => {
 			new Notification("An error occurred while submitting the response", {
-				body: "Make sure you have an active network connection.",
+				body: "There was an error while submitting the response. Please try again later.",
 				sound: 'Default'
 			});
 
