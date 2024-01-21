@@ -68,13 +68,13 @@ async function updateConnectionMsg() {
 	if (bot_status === 'Online') {
 		connectionMsg.style.display = 'none';
 		connectionMsg.innerHTML = '';
+	} else if (network_status === 'Online' && bot_status === 'Online') {
+		connectionMsg.style.display = 'none';
+		connectionMsg.innerHTML = '';
 	} else if (bot_status === 'Offline' || network_status === 'Offline') {
 		connectionMsg.style.display = 'block';
 		connectionMsg.style.textTransform = 'uppercase'
 		connectionMsg.innerHTML = 'Aurora is Offline';
-	} else if (network_status === 'Online' && bot_status === 'Online') {
-		connectionMsg.style.display = 'none';
-		connectionMsg.innerHTML = '';
 	}
 }
 
