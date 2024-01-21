@@ -42,6 +42,7 @@ html {
 }
 
 a {
+	color: #B0B0B0;
 	text-decoration: underline;
 	text-underline-offset: 2px;
 	opacity: 0.7;
@@ -139,5 +140,14 @@ a:hover {
 }
 #message-input:focus {
 	opacity: 1;
+	transition: 0.3s;
+}
+
+#connectionMsg{
+	color: #B0B0B0;
+	transition: 0.3s;
+}
+#connectionMsg:hover{
+	color: #ECECEC;
 	transition: 0.3s;
 }

@@ -75,7 +75,7 @@
 		<div class="flex flexCol" style="height: calc(100% - 130px); width: 100%; align-items: center; justify-content: center;">
 			<div id="startMsg" class="flex flexCol" style="height: calc(100% - 130px); width: 100%; background: #242424; align-items: center; justify-content: center; gap: 30px; position: absolute; z-index: 5;">
 				<img style="height: 60px;" src="assets/images/logo-text.svg">
-				<p style="color: #B0B0B0; font-size: 14px; font-family: var(--light);">Aurora is a demo chatbot built with <a href="https://tauri.app" target="_blank" style="color: #B0B0B0;">Tauri</a> and <a href="https://rasa.com" target="_blank" style="color: #B0B0B0;">Rasa</a>.</p>
+				<p style="color: #B0B0B0; font-size: 14px; font-family: var(--light);">Aurora is a demo chatbot built with <a href="https://tauri.app" target="_blank">Tauri</a> and <a href="https://rasa.com" target="_blank">Rasa</a></p>
 			</div>
 
 			<div id="scrollContainer" class="flex" style="height: 90%; width: 100%; overflow: auto; justify-content: center;">
@@ -98,10 +98,12 @@
 			</div>
 
 			<span style="width: 100%; display: flex; align-items: center; justify-content: center;">
-				<span id="connectionMsg" style="color: #B0B0B0; background: #242424; font-size: 12px; font-family: var(--regular); text-align: center; width: 100%; position: absolute; z-index: 10;"></span>
+				<span style="background: #242424; width: 100%; position: absolute; z-index: 10; display: flex; align-items: center; justify-content: center;">
+					<span id="connectionMsg" style="font-size: 12px; font-family: var(--regular); text-transform: uppercase;"></span>
+				</span>
 
 				<p style="color: #B0B0B0; font-size: 12px; font-family: var(--light);">
-					Note: This is a demo, so please don't use any personal information. See more on <a href="https://github.com/sandunwira/Aurora" target="_blank" style="color: #B0B0B0;">GitHub</a>.
+					Note: This is a demo, so please don't use any personal information. See more on <a href="https://github.com/sandunwira/Aurora" target="_blank">GitHub</a>
 				</p>
 			</span>
 		</form>
