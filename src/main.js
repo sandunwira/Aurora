@@ -68,6 +68,7 @@ chatForm.addEventListener('submit', function (event) {
 			responsesDiv.appendChild(botResponseDiv);
 			messageInput.value = '';
 
+			saveResponses();
 			changeSubmitBtnColor();
 
 			scrollContainer.scrollTop = scrollContainer.scrollHeight;
@@ -86,7 +87,7 @@ chatForm.addEventListener('submit', function (event) {
 function startMsgStatus() {
 	if (responsesDiv.innerHTML === '') {
 		startMsg.style.display = 'flex';
-	} else {
+	} else if (responsesDiv.innerHTML !== localStorage.getItem('responsesDiv') || responsesDiv.innerHTML !== '') {
 		startMsg.style.display = 'none';
 	}
 }
@@ -110,12 +111,23 @@ messageInput.addEventListener('input', () => {
 });
 
 
+function saveResponses() {
+	localStorage.setItem('responsesDiv', responsesDiv.innerHTML);
+}
+
+function loadResponses() {
+	responsesDiv.innerHTML = localStorage.getItem('responsesDiv');
+	scrollContainer.scrollTop = scrollContainer.scrollHeight;
+}
+
+
 
 setInterval(() => {
 	startMsgStatus();
 }, 2000);
 
 
-window.onload = () => {
+window.addEventListener('load', () => {
 	startMsgStatus();
-};
+	loadResponses();
+});
