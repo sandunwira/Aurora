@@ -112,12 +112,14 @@ a:hover {
 	transition: 0.2s;
 }
 
-#networkIndicator {
+
+.titlebarBtn{
 	opacity: 0.7;
 	transition: 0.2s;
 }
-#networkIndicator:hover {
+.titlebarBtn:hover{
 	opacity: 1;
+	cursor: pointer;
 	transition: 0.2s;
 }
 

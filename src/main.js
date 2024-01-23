@@ -8,6 +8,8 @@ var botResponse = document.querySelector('.botResponse');
 const scrollContainer = document.getElementById('scrollContainer');
 const startMsg = document.getElementById('startMsg');
 const images = document.getElementsByTagName('img');
+const clearBtn = document.getElementById('clearBtn');
+const refreshBtn = document.getElementById('refreshBtn');
 
 
 document.getElementById('titlebar-minimize').addEventListener('click', () => appWindow.minimize());
@@ -20,6 +22,11 @@ for (let i = 0; i < images.length; i++) {
 		e.preventDefault();
 	});
 }
+
+
+document.addEventListener('contextmenu', function (e) {
+	e.preventDefault();
+});
 
 
 chatForm.addEventListener('submit', function (event) {
@@ -119,6 +126,17 @@ function loadResponses() {
 	responsesDiv.innerHTML = localStorage.getItem('responsesDiv');
 	scrollContainer.scrollTop = scrollContainer.scrollHeight;
 }
+
+
+clearBtn.addEventListener('click', () => {
+	responsesDiv.innerHTML = '';
+	saveResponses();
+	startMsgStatus();
+});
+
+refreshBtn.addEventListener('click', () => {
+	window.location.reload();
+});
 
 
 

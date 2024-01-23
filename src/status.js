@@ -1,6 +1,7 @@
 const statusIndicator = document.getElementById('statusIndicator');
 const statusImg = document.getElementById('statusImg');
 const serverStatus = document.getElementById('serverStatus');
+const networkBtn = document.getElementById('networkBtn');
 const networkIndicator = document.getElementById('networkIndicator');
 const connectionMsg = document.getElementById('connectionMsg');
 
@@ -22,12 +23,10 @@ function updateBotStatus() {
 		.then(status => {
 			if (status === 'Online') {
 				statusImg.style.filter = 'invert(44%) sepia(87%) saturate(545%) hue-rotate(62deg) brightness(93%) contrast(87%)';
-				serverStatus.title = 'Aurora is Online';
-				serverStatus.innerHTML = 'Online';
+				statusIndicator.title = 'Aurora is Online';
 			} else {
 				statusImg.style.filter = 'invert(22%) sepia(1%) saturate(0%) hue-rotate(290deg) brightness(97%) contrast(84%)';
-				serverStatus.title = 'Aurora is Offline';
-				serverStatus.innerHTML = 'Offline';
+				statusIndicator.title = 'Aurora is Offline';
 			}
 		});
 }
@@ -52,10 +51,10 @@ function updateNetworkStatus() {
 		.then(status => {
 			if (status === 'Online') {
 				networkIndicator.style.filter = 'invert(44%) sepia(87%) saturate(545%) hue-rotate(62deg) brightness(93%) contrast(87%)';
-				networkIndicator.title = 'You are Online';
+				networkBtn.title = 'You are Online';
 			} else {
 				networkIndicator.style.filter = 'invert(22%) sepia(1%) saturate(0%) hue-rotate(290deg) brightness(97%) contrast(84%)';
-				networkIndicator.title = 'You are Offline';
+				networkBtn.title = 'You are Offline';
 			}
 		});
 }
