@@ -11,4 +11,4 @@
 
 **COMING SOON** (It is a chatbot)
 
-For updates, add this repository to your **watchlist**
+For updates, add this repository to your **watchlist** and **stars**
