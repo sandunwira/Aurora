@@ -10,3 +10,5 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/sandunwira/Aurora?style=for-the-badge)](https://github.com/sandunwira/Aurora/commit/main)
 
 **COMING SOON** (It is a chatbot)
+
+For updates, add this repository to your **watchlist**
