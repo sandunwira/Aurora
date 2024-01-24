@@ -114,12 +114,26 @@ a:hover {
 
 
 .titlebarBtn{
+	background: #424242;
+	padding: 4px 8px;
+	align-items: center;
+	gap: 5px;
+	border-radius: 5px;
 	opacity: 0.7;
 	transition: 0.2s;
 }
 .titlebarBtn:hover{
 	opacity: 1;
 	cursor: pointer;
+	transition: 0.2s;
+}
+
+#clearBtn{
+	background: #424242;
+	transition: 0.2s;
+}
+#clearBtn:hover{
+	background: #9D2E2E;
 	transition: 0.2s;
 }
 

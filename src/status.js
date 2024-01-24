@@ -25,7 +25,7 @@ function updateBotStatus() {
 				statusImg.style.filter = 'invert(44%) sepia(87%) saturate(545%) hue-rotate(62deg) brightness(93%) contrast(87%)';
 				statusIndicator.title = 'Aurora is Online';
 			} else {
-				statusImg.style.filter = 'invert(22%) sepia(1%) saturate(0%) hue-rotate(290deg) brightness(97%) contrast(84%)';
+				statusImg.style.filter = 'invert(93%) sepia(99%) saturate(2%) hue-rotate(114deg) brightness(109%) contrast(101%)';
 				statusIndicator.title = 'Aurora is Offline';
 			}
 		});
@@ -53,7 +53,7 @@ function updateNetworkStatus() {
 				networkIndicator.style.filter = 'invert(44%) sepia(87%) saturate(545%) hue-rotate(62deg) brightness(93%) contrast(87%)';
 				networkBtn.title = 'You are Online';
 			} else {
-				networkIndicator.style.filter = 'invert(22%) sepia(1%) saturate(0%) hue-rotate(290deg) brightness(97%) contrast(84%)';
+				networkIndicator.style.filter = 'invert(93%) sepia(99%) saturate(2%) hue-rotate(114deg) brightness(109%) contrast(101%)';
 				networkBtn.title = 'You are Offline';
 			}
 		});

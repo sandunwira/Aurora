@@ -10,7 +10,6 @@
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="fonts.css">
 
-	<script src="script.js" defer></script>
 	<script src="status.js" defer></script>
 
 	<link rel="preload" href="assets/fonts/HelveticaNowDisplay-Light.otf" as="font" type="font/otf" crossorigin>
@@ -29,7 +28,6 @@
 	<link rel="preload" href="assets/images/logo-text.svg" as="image" type="image/svg+xml">
 	<link rel="preload" href="style.css" as="style" type="text/css">
 	<link rel="preload" href="fonts.css" as="style" type="text/css">
-	<link rel="preload" href="script.js" as="script" type="text/javascript">
 	<link rel="preload" href="status.js" as="script" type="text/javascript">
 </head>
 
@@ -45,28 +43,28 @@
 					<span class="flex" style="height: 100%; font-size: 10px; font-family: var(--light); color: #B0B0B0; margin-left: 6px; align-items: center;">v1.0.0</span>
 
 					<span class="flex flexRow" style="align-items: center; gap: 10px; margin-left: 20px; z-index: 10;">
-						<span id="statusIndicator" class="titlebarBtn flex" style="background: #424242; padding: 4px 8px; align-items: center; gap: 5px; border-radius: 5px; cursor: default;" title="Refresh">
+						<span id="statusIndicator" class="titlebarBtn flex" style="cursor: default;" title="Refresh">
 							<img id="statusImg" style="height: 8px;" src="assets/images/ui/status.svg">
-							<span style="font-family: var(--light); font-size: 12px;">Aurora</span>
+							<span style="font-family: var(--light); font-size: 10px; letter-spacing: 0.5px;">Aurora</span>
 						</span>
 
-						<span id="networkBtn" class="titlebarBtn flex" style="background: #424242; padding: 4px 8px; align-items: center; gap: 5px; border-radius: 5px; cursor: default;" title="Refresh">
-							<img id="networkIndicator" style="height: 10px;" src="assets/images/ui/network.svg">
-							<span style="font-family: var(--light); font-size: 12px;">Internet</span>
+						<span id="networkBtn" class="titlebarBtn flex" style="cursor: default;" title="Refresh">
+							<img id="networkIndicator" style="height: 9px;" src="assets/images/ui/network.svg">
+							<span style="font-family: var(--light); font-size: 10px; letter-spacing: 0.5px;">Internet</span>
 						</span>
 					</span>
 				</div>
 
 				<div style="height: 100%; display: flex; flex-direction: row; align-items: center; gap: 20px; z-index: 10;">
 					<span class="flex flexRow" style="align-items: center; gap: 10px;">
-						<span id="refreshBtn" class="titlebarBtn flex" style="background: #424242; padding: 4px 8px; align-items: center; gap: 5px; border-radius: 5px;" title="Refresh">
-							<img style="height: 10px;" src="assets/images/ui/refresh.svg">
-							<span style="font-family: var(--light); font-size: 12px;">Refresh</span>
+						<span id="refreshBtn" class="titlebarBtn flex" title="Refresh">
+							<img style="height: 9px;" src="assets/images/ui/refresh.svg">
+							<span style="font-family: var(--light); font-size: 10px; letter-spacing: 0.5px;">Refresh</span>
 						</span>
 
-						<span id="clearBtn" class="titlebarBtn flex" style="background: #424242; padding: 4px 8px; align-items: center; gap: 5px; border-radius: 5px;" title="Clear Chat">
+						<span id="clearBtn" class="titlebarBtn flex" title="Clear Chat">
 							<img style="height: 9px;" src="assets/images/ui/delete.svg">
-							<span style="font-family: var(--light); font-size: 12px;">Clear Chat</span>
+							<span style="font-family: var(--light); font-size: 10px; letter-spacing: 0.5px;">Clear Chat</span>
 						</span>
 					</span>
 
